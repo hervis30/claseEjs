@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head');%>
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/header');%>
+    </header>
+    <div class="container">
+        <h1>Estamos en inicio</h1>
+        <!-- colocar estilos rojo para estado false y verde para true -->
+        <ul>
+            <% products.forEach(prod=> {%>
+                <li>
+                    <%= prod.ref %> - <%= prod.descripcion %> - <%= prod.precio *2 %> - <%= prod.estado ? 'disponible'
+                                    : 'no disponible' %>
+                </li>
+
+                <%}) %>
+        </ul>
+    </div>
+    <footer>
+        <%- include('../partials/footer');%>
+    </footer>
+
+</body>
+
+</html>
